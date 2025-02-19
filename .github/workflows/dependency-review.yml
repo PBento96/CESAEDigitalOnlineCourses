@@ -11,8 +11,6 @@ name: 'Dependency review'
 on:
   pull_request:
     branches: [ "main" ]
-  push:
-    branches: [ "*" ]
 
 # If using a dependency submission action in this workflow this permission will need to be set to:
 #
@@ -42,8 +40,3 @@ jobs:
         with:
           comment-summary-in-pr: always
           repo-token: ${{ secrets.GITHUB_TOKEN }}
-          base-ref: ${{ github.event.pull_request.base.ref }}
-          head-ref: ${{ github.event.pull_request.head.ref }}
-        #   fail-on-severity: moderate
-        #   deny-licenses: GPL-1.0-or-later, LGPL-2.0-or-later
-        #   retry-on-snapshot-warnings: true
